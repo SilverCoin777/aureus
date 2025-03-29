@@ -1,63 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AUREUS - Digital Gold</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #000;
+      background: #000;
       color: #fff;
     }
     header {
-      background-color: #111;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem;
+      background: #111;
     }
     header h1 {
       font-size: 3rem;
       color: gold;
+      margin: 0;
     }
     nav {
-      text-align: center;
       margin-top: 1rem;
     }
     nav button {
+      margin: 0.2rem;
+      padding: 0.5rem 1rem;
       background: gold;
       border: none;
-      color: black;
-      padding: 0.6rem 1.2rem;
-      margin: 0.2rem;
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
+      color: #000;
     }
     section {
-      padding: 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
+      padding: 2rem;
       position: relative;
       z-index: 1;
+    }
+    section h2 {
+      border-bottom: 2px solid gold;
+      padding-bottom: 0.3rem;
     }
     .burn-counter {
       font-size: 2rem;
       color: gold;
       text-align: center;
+      margin: 2rem 0;
     }
     .latin-bg {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-25deg);
-      font-size: 5rem;
+      font-size: 4rem;
       color: rgba(255, 255, 255, 0.05);
-      font-weight: bold;
-      pointer-events: none;
-      z-index: 0;
-      text-align: center;
       white-space: nowrap;
+      z-index: 0;
+      pointer-events: none;
+      text-align: center;
+    }
+    .testimonial {
+      background: #111;
+      padding: 1rem;
+      border-left: 3px solid gold;
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
@@ -75,17 +94,37 @@
 
   <section>
     <h2 data-en="Vision" data-pl="Wizja">Vision</h2>
-    <p data-en="Aureus represents a new standard of value..." data-pl="Aureus reprezentuje nowy standard wartości...">Aureus represents a new standard of value...</p>
+    <p data-en="Aureus represents a new standard of value, merging scarcity, transparency and trust." data-pl="Aureus reprezentuje nowy standard wartości, łącząc rzadkość, przejrzystość i zaufanie.">
+      Aureus represents a new standard of value, merging scarcity, transparency and trust.
+    </p>
 
     <h2 data-en="Tokenomics" data-pl="Tokenomia">Tokenomics</h2>
-    <p data-en="The total supply of AUR is capped at 1,000,000..." data-pl="Całkowita podaż AUR jest ograniczona do 1 000 000...">The total supply of AUR is capped at 1,000,000...</p>
+    <p data-en="AUR has a fixed supply of 1,000,000 tokens with an automated 1% burn mechanism that stops at 100,000 AUR."
+       data-pl="AUR ma stałą podaż 1 000 000 tokenów z automatycznym mechanizmem spalania 1%, który zatrzymuje się przy 100 000 AUR.">
+      AUR has a fixed supply of 1,000,000 tokens with an automated 1% burn mechanism that stops at 100,000 AUR.
+    </p>
 
     <h2 data-en="Burn Counter" data-pl="Licznik Spalania">Burn Counter</h2>
     <div class="burn-counter" id="burnCounter">Burned AUR: 0</div>
 
     <h2 data-en="Testimonials" data-pl="Opinie">Testimonials</h2>
-    <p data-en="Aureus is the future of digital gold." data-pl="Aureus to przyszłość cyfrowego złota.">Aureus is the future of digital gold.</p>
+    <div class="testimonial" data-en="Aureus gives me hope for decentralized value." data-pl="Aureus daje mi nadzieję na zdecentralizowaną wartość.">
+      Aureus gives me hope for decentralized value.
+    </div>
+    <div class="testimonial" data-en="The Fibonacci inspiration is genius." data-pl="Inspiracja ciągiem Fibonacciego to genialny pomysł.">
+      The Fibonacci inspiration is genius.
+    </div>
+    <div class="testimonial" data-en="The burn mechanism shows long-term thinking." data-pl="Mechanizm spalania pokazuje myślenie długoterminowe.">
+      The burn mechanism shows long-term thinking.
+    </div>
+    <div class="testimonial" data-en="Aureus is the digital gold we need." data-pl="Aureus to cyfrowe złoto, którego potrzebujemy.">
+      Aureus is the digital gold we need.
+    </div>
   </section>
+
+  <footer>
+    &copy; 2025 AUREUS. All rights reserved.
+  </footer>
 
   <script>
     function changeLanguage(lang) {
