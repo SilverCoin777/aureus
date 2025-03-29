@@ -1,173 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AUREUS - Digital Gold</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
-      color: white;
-    }
-    header {
-      background-color: #111;
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: gold;
-      margin: 0;
-    }
-    header p {
-      color: #ccc;
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-    nav {
-      text-align: center;
-      padding: 20px 10px;
-    }
-    nav button {
-      background: none;
-      border: 2px solid gold;
-      color: gold;
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    nav button:hover {
-      background: gold;
-      color: black;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    section h2 {
-      color: gold;
-      font-size: 2rem;
-    }
-    .burn-counter {
-      font-size: 2.5rem;
-      color: crimson;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #333;
-    }
-    .languages {
-      margin-top: 20px;
-    }
-    .languages select {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: none;
-    }
-    .latin {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      font-style: italic;
-      opacity: 0.08;
-      font-size: 10rem;
-      z-index: 0;
-      color: white;
-      pointer-events: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="latin">Aurum Veritas</div>
-  <header>
-    <h1>AUREUS</h1>
-    <p>Digital Gold for a New Era. Powered by blockchain. Guided by Fibonacci.</p>
-  </header>
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Globe } from "lucide-react";
 
-  <nav>
-    <button onclick="scrollToSection('vision')">VISION</button>
-    <button onclick="scrollToSection('tokenomics')">TOKENOMICS</button>
-    <button onclick="scrollToSection('burn')">BURN COUNTER</button>
-    <button onclick="scrollToSection('whitepaper')">WHITEPAPER</button>
-  </nav>
+export default function AureusPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white p-6">
+      <header className="text-center py-10">
+        <h1 className="text-5xl font-bold tracking-wide text-yellow-400">AUREUS</h1>
+        <p className="mt-2 italic text-zinc-300">"Fiat Lux. Fiat Veritas. Fiat AUREUS."</p>
+      </header>
 
-  <section id="vision">
-    <h2>VISION</h2>
-    <p>AUREUS aspires to become the symbol of digital purity, value, and elegance — a cryptocurrency designed to withstand the tests of time.</p>
-  </section>
+      <section className="flex flex-col items-center gap-6">
+        <img src="/aureus-logo.png" alt="AUREUS Logo" className="w-40 h-40" />
+        <p className="max-w-2xl text-center text-lg text-zinc-300">
+          AUREUS ($AUR) to nowa era cyfrowego złota. Zbudowany na Ethereum, deflacyjny,
+          zdecentralizowany i zaprojektowany z myślą o przebudzeniu świadomości.
+        </p>
+        <p className="text-sm text-zinc-400">Smart contract: 0xF076C62684a994a9f9Aa0DE5CbEC2FE8dEbA8f78</p>
+      </section>
 
-  <section id="tokenomics">
-    <h2>TOKENOMICS</h2>
-    <p>Total Supply: 1,000,000 AUR<br>Deflationary model: 1% burn per transaction<br>Burn stops at 100,000 AUR</p>
-  </section>
+      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card className="bg-zinc-800 border-zinc-700">
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-semibold text-yellow-300 mb-2">Złoty ciąg Fibonacciego</h2>
+            <p className="text-zinc-300">
+              Symbolika ciągu Fibonacciego reprezentuje harmonię, wzrost i porządek wszechświata. W AUREUS jest on obecny jako
+              tło ideologiczne i wizualne projektu.
+            </p>
+          </CardContent>
+        </Card>
 
-  <section id="burn">
-    <h2>BURN COUNTER</h2>
-    <div class="burn-counter" id="burnCount">Calculating...</div>
-  </section>
+        <Card className="bg-zinc-800 border-zinc-700">
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-semibold text-yellow-300 mb-2">Czarna kostka</h2>
+            <p className="text-zinc-300">
+              Reprezentuje tajemnicę, siłę i przemianę. Kostka jest widoczna w logo i w DNA projektu jako znak nowej ery decentralizacji.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
 
-  <section id="whitepaper">
-    <h2>WHITEPAPER</h2>
-    <p>Our whitepaper outlines the core philosophy, architecture, and long-term vision of AUREUS. It represents the foundation upon which this decentralized digital asset stands.</p>
-  </section>
+      <section className="mt-16 text-center">
+        <h3 className="text-xl font-bold text-yellow-400 mb-4">Dostępne języki</h3>
+        <div className="flex flex-wrap justify-center gap-3 text-sm text-zinc-300">
+          <span>English</span><span>Polski</span><span>Deutsch</span><span>Français</span><span>Español</span>
+          <span>Italiano</span><span>Português</span><span>Русский</span><span>Українська</span><span>العربية</span>
+          <span>हिन्दी</span><span>中文</span><span>日本語</span><span>한국어</span><span>Türkçe</span><span>עברית</span>
+        </div>
+      </section>
 
-  <section class="languages">
-    <label for="languageSelect">🌍 Choose Language:</label>
-    <select id="languageSelect" onchange="changeLanguage()">
-      <option value="en">English</option>
-      <option value="pl">Polski</option>
-      <option value="es">Español</option>
-      <option value="de">Deutsch</option>
-      <option value="fr">Français</option>
-      <option value="it">Italiano</option>
-      <option value="pt">Português</option>
-      <option value="ru">Русский</option>
-      <option value="zh">中文</option>
-      <option value="ja">日本語</option>
-      <option value="ko">한국어</option>
-      <option value="ar">العربية</option>
-      <option value="tr">Türkçe</option>
-      <option value="nl">Nederlands</option>
-      <option value="sv">Svenska</option>
-      <option value="no">Norsk</option>
-    </select>
-  </section>
-
-  <footer>
-    &copy; 2025 AUREUS Project. All rights reserved.
-  </footer>
-
-  <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function changeLanguage() {
-      const lang = document.getElementById('languageSelect').value;
-      alert('Language change to ' + lang + ' (functionality coming soon)');
-    }
-
-    function updateBurnCounter() {
-      const totalSupply = 1000000;
-      const currentSupply = Math.floor(Math.random() * 900000) + 100000;
-      document.getElementById("burnCount").textContent =
-        (totalSupply - currentSupply).toLocaleString() + " AUR burned 🔥";
-    }
-    updateBurnCounter();
-    setInterval(updateBurnCounter, 4000);
-  </script>
-</body>
-</html>
+      <footer className="mt-20 text-center text-xs text-zinc-500 italic">
+        <p>© 2025 AUREUS | Veritas in Numeris</p>
+      </footer>
+    </div>
+  );
+}
