@@ -1,144 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AUREUS - Digital Gold</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #000;
-      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+      color: white;
     }
     header {
+      background-color: #111;
       text-align: center;
-      padding: 2rem;
-      background: #111;
+      padding: 40px 20px 20px;
     }
     header h1 {
       font-size: 3rem;
       color: gold;
       margin: 0;
     }
+    header p {
+      color: #ccc;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
     nav {
-      margin-top: 1rem;
+      text-align: center;
+      padding: 20px 10px;
     }
     nav button {
-      margin: 0.2rem;
-      padding: 0.5rem 1rem;
-      background: gold;
-      border: none;
-      font-weight: bold;
+      background: none;
+      border: 2px solid gold;
+      color: gold;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      color: #000;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background: gold;
+      color: black;
     }
     section {
-      max-width: 1000px;
+      padding: 40px 20px;
+      max-width: 900px;
       margin: auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
+      text-align: center;
     }
     section h2 {
-      border-bottom: 2px solid gold;
-      padding-bottom: 0.3rem;
+      color: gold;
+      font-size: 2rem;
     }
     .burn-counter {
-      font-size: 2rem;
-      color: gold;
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .latin-bg {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-25deg);
-      font-size: 4rem;
-      color: rgba(255, 255, 255, 0.05);
-      white-space: nowrap;
-      z-index: 0;
-      pointer-events: none;
-      text-align: center;
-    }
-    .testimonial {
-      background: #111;
-      padding: 1rem;
-      border-left: 3px solid gold;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      color: crimson;
+      margin-top: 20px;
+      font-weight: bold;
     }
     footer {
       text-align: center;
-      padding: 2rem;
-      background: #111;
+      padding: 20px;
       font-size: 0.9rem;
       color: #777;
+      border-top: 1px solid #333;
+    }
+    .languages {
+      margin-top: 20px;
+    }
+    .languages select {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+    .latin {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-style: italic;
+      opacity: 0.08;
+      font-size: 10rem;
+      z-index: 0;
+      color: white;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <div class="latin-bg">Veritas • Sapientia • Aeternitas</div>
-
+  <div class="latin">Aurum Veritas</div>
   <header>
     <h1>AUREUS</h1>
-    <p>Digital Gold for a New Era – Powered by Blockchain, Guided by Fibonacci</p>
-    <nav>
-      <button onclick="changeLanguage('en')">EN</button>
-      <button onclick="changeLanguage('pl')">PL</button>
-    </nav>
+    <p>Digital Gold for a New Era. Powered by blockchain. Guided by Fibonacci.</p>
   </header>
 
-  <section>
-    <h2 data-en="Vision" data-pl="Wizja">Vision</h2>
-    <p data-en="Aureus represents a new standard of value, merging scarcity, transparency and trust." data-pl="Aureus reprezentuje nowy standard wartości, łącząc rzadkość, przejrzystość i zaufanie.">
-      Aureus represents a new standard of value, merging scarcity, transparency and trust.
-    </p>
+  <nav>
+    <button onclick="scrollToSection('vision')">VISION</button>
+    <button onclick="scrollToSection('tokenomics')">TOKENOMICS</button>
+    <button onclick="scrollToSection('burn')">BURN COUNTER</button>
+    <button onclick="scrollToSection('whitepaper')">WHITEPAPER</button>
+  </nav>
 
-    <h2 data-en="Tokenomics" data-pl="Tokenomia">Tokenomics</h2>
-    <p data-en="AUR has a fixed supply of 1,000,000 tokens with an automated 1% burn mechanism that stops at 100,000 AUR."
-       data-pl="AUR ma stałą podaż 1 000 000 tokenów z automatycznym mechanizmem spalania 1%, który zatrzymuje się przy 100 000 AUR.">
-      AUR has a fixed supply of 1,000,000 tokens with an automated 1% burn mechanism that stops at 100,000 AUR.
-    </p>
+  <section id="vision">
+    <h2>VISION</h2>
+    <p>AUREUS aspires to become the symbol of digital purity, value, and elegance — a cryptocurrency designed to withstand the tests of time.</p>
+  </section>
 
-    <h2 data-en="Burn Counter" data-pl="Licznik Spalania">Burn Counter</h2>
-    <div class="burn-counter" id="burnCounter">Burned AUR: 0</div>
+  <section id="tokenomics">
+    <h2>TOKENOMICS</h2>
+    <p>Total Supply: 1,000,000 AUR<br>Deflationary model: 1% burn per transaction<br>Burn stops at 100,000 AUR</p>
+  </section>
 
-    <h2 data-en="Testimonials" data-pl="Opinie">Testimonials</h2>
-    <div class="testimonial" data-en="Aureus gives me hope for decentralized value." data-pl="Aureus daje mi nadzieję na zdecentralizowaną wartość.">
-      Aureus gives me hope for decentralized value.
-    </div>
-    <div class="testimonial" data-en="The Fibonacci inspiration is genius." data-pl="Inspiracja ciągiem Fibonacciego to genialny pomysł.">
-      The Fibonacci inspiration is genius.
-    </div>
-    <div class="testimonial" data-en="The burn mechanism shows long-term thinking." data-pl="Mechanizm spalania pokazuje myślenie długoterminowe.">
-      The burn mechanism shows long-term thinking.
-    </div>
-    <div class="testimonial" data-en="Aureus is the digital gold we need." data-pl="Aureus to cyfrowe złoto, którego potrzebujemy.">
-      Aureus is the digital gold we need.
-    </div>
+  <section id="burn">
+    <h2>BURN COUNTER</h2>
+    <div class="burn-counter" id="burnCount">Calculating...</div>
+  </section>
+
+  <section id="whitepaper">
+    <h2>WHITEPAPER</h2>
+    <p>Our whitepaper outlines the core philosophy, architecture, and long-term vision of AUREUS. It represents the foundation upon which this decentralized digital asset stands.</p>
+  </section>
+
+  <section class="languages">
+    <label for="languageSelect">🌍 Choose Language:</label>
+    <select id="languageSelect" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="pl">Polski</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="it">Italiano</option>
+      <option value="pt">Português</option>
+      <option value="ru">Русский</option>
+      <option value="zh">中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="ar">العربية</option>
+      <option value="tr">Türkçe</option>
+      <option value="nl">Nederlands</option>
+      <option value="sv">Svenska</option>
+      <option value="no">Norsk</option>
+    </select>
   </section>
 
   <footer>
-    &copy; 2025 AUREUS. All rights reserved.
+    &copy; 2025 AUREUS Project. All rights reserved.
   </footer>
 
   <script>
-    function changeLanguage(lang) {
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${lang}`);
-      });
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
 
-    const counterEl = document.getElementById('burnCounter');
-    let currentBurn = 0;
-    setInterval(() => {
-      currentBurn += Math.floor(Math.random() * 10);
-      counterEl.textContent = `Burned AUR: ${currentBurn.toLocaleString()}`;
-    }, 3000);
+    function changeLanguage() {
+      const lang = document.getElementById('languageSelect').value;
+      alert('Language change to ' + lang + ' (functionality coming soon)');
+    }
+
+    function updateBurnCounter() {
+      const totalSupply = 1000000;
+      const currentSupply = Math.floor(Math.random() * 900000) + 100000;
+      document.getElementById("burnCount").textContent =
+        (totalSupply - currentSupply).toLocaleString() + " AUR burned 🔥";
+    }
+    updateBurnCounter();
+    setInterval(updateBurnCounter, 4000);
   </script>
 </body>
 </html>
