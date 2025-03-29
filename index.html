@@ -1,114 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUREUS - Digital Gold</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
-        header {
-            background-color: #111;
-            padding: 2rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 3rem;
-            color: gold;
-        }
-        nav {
-            text-align: center;
-            margin-top: 1rem;
-        }
-        nav button {
-            background: gold;
-            border: none;
-            color: black;
-            padding: 0.6rem 1.2rem;
-            margin: 0.2rem;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        section {
-            padding: 2rem;
-            max-width: 900px;
-            margin: auto;
-        }
-        .latin-decor {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.08);
-            position: fixed;
-            z-index: 0;
-        }
-        .latin-top-left {
-            top: 20px;
-            left: 20px;
-        }
-        .latin-bottom-right {
-            bottom: 20px;
-            right: 20px;
-        }
-        .latin-center {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-25deg);
-        }
-        .burn-counter {
-            font-size: 2rem;
-            color: gold;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUREUS - Digital Gold</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      background-color: #111;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: gold;
+    }
+    nav {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    nav button {
+      background: gold;
+      border: none;
+      color: black;
+      padding: 0.6rem 1.2rem;
+      margin: 0.2rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+    .burn-counter {
+      font-size: 2rem;
+      color: gold;
+      text-align: center;
+    }
+    .latin-bg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-25deg);
+      font-size: 5rem;
+      color: rgba(255, 255, 255, 0.05);
+      font-weight: bold;
+      pointer-events: none;
+      z-index: 0;
+      text-align: center;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
-    <div class="latin-decor latin-top-left">Veritas</div>
-    <div class="latin-decor latin-bottom-right">Sapientia</div>
-    <div class="latin-decor latin-center">Aeternitas</div>
+  <div class="latin-bg">Veritas • Sapientia • Aeternitas</div>
 
-    <header>
-        <h1>AUREUS</h1>
-        <p>Digital Gold for a New Era – Powered by Blockchain, Guided by Fibonacci</p>
-        <nav>
-            <button onclick="changeLanguage('en')">EN</button>
-            <button onclick="changeLanguage('pl')">PL</button>
-        </nav>
-    </header>
+  <header>
+    <h1>AUREUS</h1>
+    <p>Digital Gold for a New Era – Powered by Blockchain, Guided by Fibonacci</p>
+    <nav>
+      <button onclick="changeLanguage('en')">EN</button>
+      <button onclick="changeLanguage('pl')">PL</button>
+    </nav>
+  </header>
 
-    <section>
-        <h2 data-en="Vision" data-pl="Wizja">Vision</h2>
-        <p data-en="Aureus represents a new standard of value..." data-pl="Aureus reprezentuje nowy standard wartości...">Aureus represents a new standard of value...</p>
+  <section>
+    <h2 data-en="Vision" data-pl="Wizja">Vision</h2>
+    <p data-en="Aureus represents a new standard of value..." data-pl="Aureus reprezentuje nowy standard wartości...">Aureus represents a new standard of value...</p>
 
-        <h2 data-en="Tokenomics" data-pl="Tokenomia">Tokenomics</h2>
-        <p data-en="The total supply of AUR is capped at 1,000,000..." data-pl="Całkowita podaż AUR jest ograniczona do 1 000 000...">The total supply of AUR is capped at 1,000,000...</p>
+    <h2 data-en="Tokenomics" data-pl="Tokenomia">Tokenomics</h2>
+    <p data-en="The total supply of AUR is capped at 1,000,000..." data-pl="Całkowita podaż AUR jest ograniczona do 1 000 000...">The total supply of AUR is capped at 1,000,000...</p>
 
-        <h2 data-en="Burn Counter" data-pl="Licznik Spalania">Burn Counter</h2>
-        <div class="burn-counter" id="burnCounter">Burned AUR: 0</div>
+    <h2 data-en="Burn Counter" data-pl="Licznik Spalania">Burn Counter</h2>
+    <div class="burn-counter" id="burnCounter">Burned AUR: 0</div>
 
-        <h2 data-en="Testimonials" data-pl="Opinie">Testimonials</h2>
-        <p data-en="Aureus is the future of digital gold." data-pl="Aureus to przyszłość cyfrowego złota.">Aureus is the future of digital gold.</p>
-    </section>
+    <h2 data-en="Testimonials" data-pl="Opinie">Testimonials</h2>
+    <p data-en="Aureus is the future of digital gold." data-pl="Aureus to przyszłość cyfrowego złota.">Aureus is the future of digital gold.</p>
+  </section>
 
-    <script>
-        function changeLanguage(lang) {
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.textContent = el.getAttribute(`data-${lang}`);
-            });
-        }
+  <script>
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
 
-        // Simulowany licznik spalania AUR
-        const counterEl = document.getElementById('burnCounter');
-        let currentBurn = 0;
-        setInterval(() => {
-            currentBurn += Math.floor(Math.random() * 10);
-            counterEl.textContent = `Burned AUR: ${currentBurn.toLocaleString()}`;
-        }, 3000);
-    </script>
+    const counterEl = document.getElementById('burnCounter');
+    let currentBurn = 0;
+    setInterval(() => {
+      currentBurn += Math.floor(Math.random() * 10);
+      counterEl.textContent = `Burned AUR: ${currentBurn.toLocaleString()}`;
+    }, 3000);
+  </script>
 </body>
 </html>
