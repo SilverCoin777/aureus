@@ -16,6 +16,11 @@
       text-align: center;
       padding: 60px 20px 30px;
     }
+    header img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
     header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
@@ -54,6 +59,11 @@
       font-size: 1.1rem;
       color: #ccc;
     }
+    .burn-counter {
+      font-size: 1.8rem;
+      margin-top: 10px;
+      color: #FFD700;
+    }
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -66,6 +76,7 @@
   <div class="latin-bg">Veritas • Sapientia • Aeternitas</div>
 
   <header>
+    <img src="https://raw.githubusercontent.com/TwojaNazwaGithub/Aureus/main/logo.png" alt="Aureus Logo" />
     <h1>AUREUS</h1>
     <p>Digital Gold for a New Era • Guided by Fibonacci</p>
   </header>
@@ -78,18 +89,44 @@
 
     <div class="section">
       <h2>Tokenomics</h2>
-      <p>Total Supply: 1,000,000 AUR<br>Burn Mechanism: 1% per transaction until 100,000 AUR remains.</p>
+      <p>Total Supply: 1,000,000 AUR<br>Burn Mechanism: 1% per transaction<br>Final Supply: 100,000 AUR</p>
+    </div>
+
+    <div class="section">
+      <h2>Burn Counter</h2>
+      <div class="burn-counter" id="burnCounter">Current Supply: 1,000,000 AUR</div>
     </div>
 
     <div class="section">
       <h2>Whitepaper</h2>
       <p>Coming soon — a transparent and powerful manifesto explaining the purpose and structure of AUREUS.</p>
     </div>
+
+    <div class="section">
+      <h2>Testimonials</h2>
+      <p>"Finally a digital asset that understands scarcity." – CryptoVisionary<br>
+         "Inspired by Fibonacci, backed by code." – Blockchain Sage<br>
+         "I believe AUREUS has long-term legacy potential." – FutureBuilder<br>
+         "Digital gold, indeed. Beautiful in principle and purpose." – TechSeeker</p>
+    </div>
   </main>
 
   <footer>
     &copy; 2025 AUREUS Project • All rights reserved.
   </footer>
+
+  <script>
+    // Dynamic burn counter
+    const burnCounter = document.getElementById("burnCounter");
+    let total = 1000000;
+    let burned = 0;
+    setInterval(() => {
+      if (total > 100000) {
+        burned += total * 0.01;
+        total -= total * 0.01;
+        burnCounter.textContent = `Current Supply: ${Math.round(total)} AUR`;
+      }
+    }, 4000);
+  </script>
 </body>
 </html>
-
