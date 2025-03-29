@@ -1,257 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AUREUS | Digital Gold</title>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #FFD700;
-      font-family: 'Barlow Condensed', sans-serif;
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px 20px;
-    }
-    header img {
-      width: 100px;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 20px 0 10px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-      background: #111;
-      font-size: 1.2rem;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #FFD700;
-      transition: 0.3s ease;
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-    }
-    .lang-switch button {
-      background: #111;
-      border: 1px solid #FFD700;
-      color: #FFD700;
-      padding: 5px 10px;
-      margin-left: 5px;
-      cursor: pointer;
-    }
-    .latin-bg {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3rem;
-      color: rgba(255, 255, 255, 0.05);
-      white-space: nowrap;
-      z-index: 0;
-    }
-    section {
-      position: relative;
-      z-index: 1;
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-    p {
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-    .burn-counter {
-      font-size: 1.8rem;
-      color: #FFD700;
-      margin-top: 15px;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      background: #111;
-      color: #999;
-    }
-    .testimonial {
-      margin-bottom: 20px;
-      font-style: italic;
-      color: #e6e6e6;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUREUS - Digital Gold</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #111;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            color: gold;
+        }
+        nav {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        nav button {
+            background: gold;
+            border: none;
+            color: black;
+            padding: 0.6rem 1.2rem;
+            margin: 0.2rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+        .latin-decor {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.08);
+            position: fixed;
+            z-index: 0;
+        }
+        .latin-top-left {
+            top: 20px;
+            left: 20px;
+        }
+        .latin-bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+        .latin-center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
+        }
+        .burn-counter {
+            font-size: 2rem;
+            color: gold;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <div class="latin-bg">Veritas • Sapientia • Aeternitas</div>
-  <div class="lang-switch">
-    <button onclick="switchLang('en')">EN</button>
-    <button onclick="switchLang('pl')">PL</button>
-  </div>
-  <header>
-    <img src="logo.png" alt="Aureus Logo">
-    <h1>AUREUS</h1>
-    <p id="slogan">Digital Gold for a New Era</p>
-  </header>
-  <nav>
-    <a href="#vision" id="navVision">Vision</a>
-    <a href="#tokenomics" id="navTokenomics">Tokenomics</a>
-    <a href="#burn" id="navBurn">Burn Counter</a>
-    <a href="#whitepaper" id="navWhitepaper">Whitepaper</a>
-    <a href="#roadmap" id="navRoadmap">Roadmap</a>
-    <a href="#faq" id="navFAQ">FAQ</a>
-    <a href="#partners" id="navPartners">Partners</a>
-    <a href="#testimonials" id="navTestimonials">Testimonials</a>
-  </nav>
-  <section id="vision">
-    <h2 id="visionTitle">Vision</h2>
-    <p id="visionText">AUREUS is a decentralized digital asset built to preserve value through scarcity and mathematical harmony.</p>
-  </section>
-  <section id="tokenomics">
-    <h2 id="tokenomicsTitle">Tokenomics</h2>
-    <p id="tokenomicsText">Total Supply: 1,000,000 AUR<br>Burn per transaction: 1%<br>Final Supply Target: 100,000 AUR<br>Burning stops automatically at 100,000 AUR.</p>
-  </section>
-  <section id="burn">
-    <h2 id="burnTitle">Burn Counter</h2>
-    <div class="burn-counter" id="burnCounter">Current Supply: 1,000,000 AUR</div>
-  </section>
-  <section id="whitepaper">
-    <h2 id="whitepaperTitle">Whitepaper</h2>
-    <p id="whitepaperText">The whitepaper presents the full philosophical and technical foundations of AUREUS. It outlines the mission, vision, tokenomics, governance, and long-term roadmap of the project.</p>
-  </section>
-  <section id="roadmap">
-    <h2 id="roadmapTitle">Roadmap</h2>
-    <p id="roadmapText">Phase 1: Smart Contract Deployment<br>Phase 2: Website Launch<br>Phase 3: Token Verification<br>Phase 4: Community Launch<br>Phase 5: Listings on CMC/CG<br>Phase 6: Utility Development</p>
-  </section>
-  <section id="faq">
-    <h2 id="faqTitle">FAQ</h2>
-    <p><strong>What is AUREUS?</strong><br><span id="faq1">A deflationary token based on Fibonacci’s golden ratio.</span></p>
-    <p><strong>How is it different?</strong><br><span id="faq2">It burns itself gradually and forever stops at 100,000 AUR.</span></p>
-    <p><strong>Where can I buy AUREUS?</strong><br><span id="faq3">Currently available via direct transfer and decentralized exchanges (future).</span></p>
-  </section>
-  <section id="partners">
-    <h2 id="partnersTitle">Partners</h2>
-    <p id="partnersText">Coming soon: trusted integrations and blockchain platforms.</p>
-  </section>
-  <section id="testimonials">
-    <h2 id="testimonialsTitle">Testimonials</h2>
-    <div class="testimonial" id="t1">"This project restores faith in crypto." — Crypto Seeker</div>
-    <div class="testimonial" id="t2">"Inspired by Fibonacci, executed by code." — Math Lover</div>
-    <div class="testimonial" id="t3">"Aureus is a symbol of value and vision." — Market Analyst</div>
-    <div class="testimonial" id="t4">"Gold for the digital age." — Anonymous User</div>
-  </section>
-  <footer>
-    &copy; 2025 AUREUS Project. All rights reserved.
-  </footer>
+    <div class="latin-decor latin-top-left">Veritas</div>
+    <div class="latin-decor latin-bottom-right">Sapientia</div>
+    <div class="latin-decor latin-center">Aeternitas</div>
 
-  <script>
-    const langData = {
-      en: {
-        slogan: "Digital Gold for a New Era",
-        navVision: "Vision",
-        navTokenomics: "Tokenomics",
-        navBurn: "Burn Counter",
-        navWhitepaper: "Whitepaper",
-        navRoadmap: "Roadmap",
-        navFAQ: "FAQ",
-        navPartners: "Partners",
-        navTestimonials: "Testimonials",
-        visionTitle: "Vision",
-        visionText: "AUREUS is a decentralized digital asset built to preserve value through scarcity and mathematical harmony.",
-        tokenomicsTitle: "Tokenomics",
-        tokenomicsText: "Total Supply: 1,000,000 AUR<br>Burn per transaction: 1%<br>Final Supply Target: 100,000 AUR<br>Burning stops automatically at 100,000 AUR.",
-        burnTitle: "Burn Counter",
-        whitepaperTitle: "Whitepaper",
-        whitepaperText: "The whitepaper presents the full philosophical and technical foundations of AUREUS. It outlines the mission, vision, tokenomics, governance, and long-term roadmap of the project.",
-        roadmapTitle: "Roadmap",
-        roadmapText: "Phase 1: Smart Contract Deployment<br>Phase 2: Website Launch<br>Phase 3: Token Verification<br>Phase 4: Community Launch<br>Phase 5: Listings on CMC/CG<br>Phase 6: Utility Development",
-        faqTitle: "FAQ",
-        faq1: "A deflationary token based on Fibonacci’s golden ratio.",
-        faq2: "It burns itself gradually and forever stops at 100,000 AUR.",
-        faq3: "Currently available via direct transfer and decentralized exchanges (future).",
-        partnersTitle: "Partners",
-        partnersText: "Coming soon: trusted integrations and blockchain platforms.",
-        testimonialsTitle: "Testimonials",
-        t1: '"This project restores faith in crypto." — Crypto Seeker',
-        t2: '"Inspired by Fibonacci, executed by code." — Math Lover',
-        t3: '"Aureus is a symbol of value and vision." — Market Analyst',
-        t4: '"Gold for the digital age." — Anonymous User'
-      },
-      pl: {
-        slogan: "Cyfrowe złoto nowej ery",
-        navVision: "Wizja",
-        navTokenomics: "Tokenomia",
-        navBurn: "Licznik Spalania",
-        navWhitepaper: "Whitepaper",
-        navRoadmap: "Mapa Drogowa",
-        navFAQ: "FAQ",
-        navPartners: "Partnerzy",
-        navTestimonials: "Opinie",
-        visionTitle: "Wizja",
-        visionText: "AUREUS to zdecentralizowany zasób cyfrowy stworzony, by zachować wartość poprzez rzadkość i matematyczną harmonię.",
-        tokenomicsTitle: "Tokenomia",
-        tokenomicsText: "Całkowita podaż: 1 000 000 AUR<br>Spalanie przy transakcji: 1%<br>Cel końcowy podaży: 100 000 AUR<br>Spalanie zatrzyma się automatycznie przy 100 000 AUR.",
-        burnTitle: "Licznik Spalania",
-        whitepaperTitle: "Whitepaper",
-        whitepaperText: "Whitepaper prezentuje filozoficzne i techniczne podstawy AUREUS. Zawiera misję, wizję, tokenomię, zarządzanie i plan długoterminowy projektu.",
-        roadmapTitle: "Mapa Drogowa",
-        roadmapText: "Faza 1: Wdrożenie Smart Contract<br>Faza 2: Uruchomienie Strony<br>Faza 3: Weryfikacja Tokena<br>Faza 4: Start Społeczności<br>Faza 5: Notowanie na CMC/CG<br>Faza 6: Rozwój Funkcjonalności",
-        faqTitle: "Najczęstsze pytania",
-        faq1: "Token deflacyjny oparty na złotym podziale Fibonacciego.",
-        faq2: "Spala się stopniowo i zatrzymuje się na poziomie 100 000 AUR.",
-        faq3: "Obecnie dostępny poprzez bezpośredni transfer i wkrótce na DEX-ach.",
-        partnersTitle: "Partnerzy",
-        partnersText: "Już wkrótce: zaufane integracje i platformy blockchain.",
-        testimonialsTitle: "Opinie",
-        t1: '"Ten projekt przywraca wiarę w krypto." — Poszukiwacz Krypto',
-        t2: '"Zainspirowany Fibonaccim, wykonany w kodzie." — Miłośnik Matematyki',
-        t3: '"Aureus to symbol wartości i wizji." — Analityk Rynku',
-        t4: '"Złoto ery cyfrowej." — Anonimowy Użytkownik'
-      }
-    };
+    <header>
+        <h1>AUREUS</h1>
+        <p>Digital Gold for a New Era – Powered by Blockchain, Guided by Fibonacci</p>
+        <nav>
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('pl')">PL</button>
+        </nav>
+    </header>
 
-    function switchLang(lang) {
-      for (const key in langData[lang]) {
-        const el = document.getElementById(key);
-        if (el) el.innerHTML = langData[lang][key];
-      }
-    }
+    <section>
+        <h2 data-en="Vision" data-pl="Wizja">Vision</h2>
+        <p data-en="Aureus represents a new standard of value..." data-pl="Aureus reprezentuje nowy standard wartości...">Aureus represents a new standard of value...</p>
 
-    const burnCounter = document.getElementById("burnCounter");
-    let supply = 1000000;
-    setInterval(() => {
-      if (supply > 100000) {
-        supply -= supply * 0.01;
-        burnCounter.textContent = `Current Supply: ${Math.round(supply)} AUR`;
-      }
-    }, 4000);
-  </script>
+        <h2 data-en="Tokenomics" data-pl="Tokenomia">Tokenomics</h2>
+        <p data-en="The total supply of AUR is capped at 1,000,000..." data-pl="Całkowita podaż AUR jest ograniczona do 1 000 000...">The total supply of AUR is capped at 1,000,000...</p>
+
+        <h2 data-en="Burn Counter" data-pl="Licznik Spalania">Burn Counter</h2>
+        <div class="burn-counter" id="burnCounter">Burned AUR: 0</div>
+
+        <h2 data-en="Testimonials" data-pl="Opinie">Testimonials</h2>
+        <p data-en="Aureus is the future of digital gold." data-pl="Aureus to przyszłość cyfrowego złota.">Aureus is the future of digital gold.</p>
+    </section>
+
+    <script>
+        function changeLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+        }
+
+        // Simulowany licznik spalania AUR
+        const counterEl = document.getElementById('burnCounter');
+        let currentBurn = 0;
+        setInterval(() => {
+            currentBurn += Math.floor(Math.random() * 10);
+            counterEl.textContent = `Burned AUR: ${currentBurn.toLocaleString()}`;
+        }, 3000);
+    </script>
 </body>
 </html>
