@@ -50,6 +50,19 @@
     nav a:hover::after {
       width: 100%;
     }
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    .lang-switch button {
+      background: #111;
+      border: 1px solid #FFD700;
+      color: #FFD700;
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
     .latin-bg {
       position: absolute;
       top: 40%;
@@ -98,63 +111,139 @@
 </head>
 <body>
   <div class="latin-bg">Veritas • Sapientia • Aeternitas</div>
+  <div class="lang-switch">
+    <button onclick="switchLang('en')">EN</button>
+    <button onclick="switchLang('pl')">PL</button>
+  </div>
   <header>
-    <img src="https://raw.githubusercontent.com/TwojaNazwaGithub/Aureus/main/logo.png" alt="Aureus Logo">
+    <img src="logo.png" alt="Aureus Logo">
     <h1>AUREUS</h1>
-    <p>Digital Gold for a New Era</p>
+    <p id="slogan">Digital Gold for a New Era</p>
   </header>
   <nav>
-    <a href="#vision">Vision</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#burn">Burn Counter</a>
-    <a href="#whitepaper">Whitepaper</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#faq">FAQ</a>
-    <a href="#partners">Partners</a>
-    <a href="#testimonials">Testimonials</a>
+    <a href="#vision" id="navVision">Vision</a>
+    <a href="#tokenomics" id="navTokenomics">Tokenomics</a>
+    <a href="#burn" id="navBurn">Burn Counter</a>
+    <a href="#whitepaper" id="navWhitepaper">Whitepaper</a>
+    <a href="#roadmap" id="navRoadmap">Roadmap</a>
+    <a href="#faq" id="navFAQ">FAQ</a>
+    <a href="#partners" id="navPartners">Partners</a>
+    <a href="#testimonials" id="navTestimonials">Testimonials</a>
   </nav>
   <section id="vision">
-    <h2>Vision</h2>
-    <p>AUREUS is a decentralized digital asset built to preserve value through scarcity and mathematical harmony.</p>
+    <h2 id="visionTitle">Vision</h2>
+    <p id="visionText">AUREUS is a decentralized digital asset built to preserve value through scarcity and mathematical harmony.</p>
   </section>
   <section id="tokenomics">
-    <h2>Tokenomics</h2>
-    <p>Total Supply: 1,000,000 AUR<br>Burn per transaction: 1%<br>Final Supply Target: 100,000 AUR<br>Burning stops automatically at 100,000 AUR.</p>
+    <h2 id="tokenomicsTitle">Tokenomics</h2>
+    <p id="tokenomicsText">Total Supply: 1,000,000 AUR<br>Burn per transaction: 1%<br>Final Supply Target: 100,000 AUR<br>Burning stops automatically at 100,000 AUR.</p>
   </section>
   <section id="burn">
-    <h2>Burn Counter</h2>
+    <h2 id="burnTitle">Burn Counter</h2>
     <div class="burn-counter" id="burnCounter">Current Supply: 1,000,000 AUR</div>
   </section>
   <section id="whitepaper">
-    <h2>Whitepaper</h2>
-    <p>The whitepaper presents the full philosophical and technical foundations of AUREUS. It outlines the mission, vision, tokenomics, governance, and long-term roadmap of the project.</p>
+    <h2 id="whitepaperTitle">Whitepaper</h2>
+    <p id="whitepaperText">The whitepaper presents the full philosophical and technical foundations of AUREUS. It outlines the mission, vision, tokenomics, governance, and long-term roadmap of the project.</p>
   </section>
   <section id="roadmap">
-    <h2>Roadmap</h2>
-    <p>Phase 1: Smart Contract Deployment<br>Phase 2: Website Launch<br>Phase 3: Token Verification<br>Phase 4: Community Launch<br>Phase 5: Listings on CMC/CG<br>Phase 6: Utility Development</p>
+    <h2 id="roadmapTitle">Roadmap</h2>
+    <p id="roadmapText">Phase 1: Smart Contract Deployment<br>Phase 2: Website Launch<br>Phase 3: Token Verification<br>Phase 4: Community Launch<br>Phase 5: Listings on CMC/CG<br>Phase 6: Utility Development</p>
   </section>
   <section id="faq">
-    <h2>FAQ</h2>
-    <p><strong>What is AUREUS?</strong><br>A deflationary token based on Fibonacci’s golden ratio.</p>
-    <p><strong>How is it different?</strong><br>It burns itself gradually and forever stops at 100,000 AUR.</p>
-    <p><strong>Where can I buy AUREUS?</strong><br>Currently available via direct transfer and decentralized exchanges (future).</p>
+    <h2 id="faqTitle">FAQ</h2>
+    <p><strong>What is AUREUS?</strong><br><span id="faq1">A deflationary token based on Fibonacci’s golden ratio.</span></p>
+    <p><strong>How is it different?</strong><br><span id="faq2">It burns itself gradually and forever stops at 100,000 AUR.</span></p>
+    <p><strong>Where can I buy AUREUS?</strong><br><span id="faq3">Currently available via direct transfer and decentralized exchanges (future).</span></p>
   </section>
   <section id="partners">
-    <h2>Partners</h2>
-    <p>Coming soon: trusted integrations and blockchain platforms.</p>
+    <h2 id="partnersTitle">Partners</h2>
+    <p id="partnersText">Coming soon: trusted integrations and blockchain platforms.</p>
   </section>
   <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonial">"This project restores faith in crypto." — Crypto Seeker</div>
-    <div class="testimonial">"Inspired by Fibonacci, executed by code." — Math Lover</div>
-    <div class="testimonial">"Aureus is a symbol of value and vision." — Market Analyst</div>
-    <div class="testimonial">"Gold for the digital age." — Anonymous User</div>
+    <h2 id="testimonialsTitle">Testimonials</h2>
+    <div class="testimonial" id="t1">"This project restores faith in crypto." — Crypto Seeker</div>
+    <div class="testimonial" id="t2">"Inspired by Fibonacci, executed by code." — Math Lover</div>
+    <div class="testimonial" id="t3">"Aureus is a symbol of value and vision." — Market Analyst</div>
+    <div class="testimonial" id="t4">"Gold for the digital age." — Anonymous User</div>
   </section>
   <footer>
     &copy; 2025 AUREUS Project. All rights reserved.
   </footer>
 
   <script>
+    const langData = {
+      en: {
+        slogan: "Digital Gold for a New Era",
+        navVision: "Vision",
+        navTokenomics: "Tokenomics",
+        navBurn: "Burn Counter",
+        navWhitepaper: "Whitepaper",
+        navRoadmap: "Roadmap",
+        navFAQ: "FAQ",
+        navPartners: "Partners",
+        navTestimonials: "Testimonials",
+        visionTitle: "Vision",
+        visionText: "AUREUS is a decentralized digital asset built to preserve value through scarcity and mathematical harmony.",
+        tokenomicsTitle: "Tokenomics",
+        tokenomicsText: "Total Supply: 1,000,000 AUR<br>Burn per transaction: 1%<br>Final Supply Target: 100,000 AUR<br>Burning stops automatically at 100,000 AUR.",
+        burnTitle: "Burn Counter",
+        whitepaperTitle: "Whitepaper",
+        whitepaperText: "The whitepaper presents the full philosophical and technical foundations of AUREUS. It outlines the mission, vision, tokenomics, governance, and long-term roadmap of the project.",
+        roadmapTitle: "Roadmap",
+        roadmapText: "Phase 1: Smart Contract Deployment<br>Phase 2: Website Launch<br>Phase 3: Token Verification<br>Phase 4: Community Launch<br>Phase 5: Listings on CMC/CG<br>Phase 6: Utility Development",
+        faqTitle: "FAQ",
+        faq1: "A deflationary token based on Fibonacci’s golden ratio.",
+        faq2: "It burns itself gradually and forever stops at 100,000 AUR.",
+        faq3: "Currently available via direct transfer and decentralized exchanges (future).",
+        partnersTitle: "Partners",
+        partnersText: "Coming soon: trusted integrations and blockchain platforms.",
+        testimonialsTitle: "Testimonials",
+        t1: '"This project restores faith in crypto." — Crypto Seeker',
+        t2: '"Inspired by Fibonacci, executed by code." — Math Lover',
+        t3: '"Aureus is a symbol of value and vision." — Market Analyst',
+        t4: '"Gold for the digital age." — Anonymous User'
+      },
+      pl: {
+        slogan: "Cyfrowe złoto nowej ery",
+        navVision: "Wizja",
+        navTokenomics: "Tokenomia",
+        navBurn: "Licznik Spalania",
+        navWhitepaper: "Whitepaper",
+        navRoadmap: "Mapa Drogowa",
+        navFAQ: "FAQ",
+        navPartners: "Partnerzy",
+        navTestimonials: "Opinie",
+        visionTitle: "Wizja",
+        visionText: "AUREUS to zdecentralizowany zasób cyfrowy stworzony, by zachować wartość poprzez rzadkość i matematyczną harmonię.",
+        tokenomicsTitle: "Tokenomia",
+        tokenomicsText: "Całkowita podaż: 1 000 000 AUR<br>Spalanie przy transakcji: 1%<br>Cel końcowy podaży: 100 000 AUR<br>Spalanie zatrzyma się automatycznie przy 100 000 AUR.",
+        burnTitle: "Licznik Spalania",
+        whitepaperTitle: "Whitepaper",
+        whitepaperText: "Whitepaper prezentuje filozoficzne i techniczne podstawy AUREUS. Zawiera misję, wizję, tokenomię, zarządzanie i plan długoterminowy projektu.",
+        roadmapTitle: "Mapa Drogowa",
+        roadmapText: "Faza 1: Wdrożenie Smart Contract<br>Faza 2: Uruchomienie Strony<br>Faza 3: Weryfikacja Tokena<br>Faza 4: Start Społeczności<br>Faza 5: Notowanie na CMC/CG<br>Faza 6: Rozwój Funkcjonalności",
+        faqTitle: "Najczęstsze pytania",
+        faq1: "Token deflacyjny oparty na złotym podziale Fibonacciego.",
+        faq2: "Spala się stopniowo i zatrzymuje się na poziomie 100 000 AUR.",
+        faq3: "Obecnie dostępny poprzez bezpośredni transfer i wkrótce na DEX-ach.",
+        partnersTitle: "Partnerzy",
+        partnersText: "Już wkrótce: zaufane integracje i platformy blockchain.",
+        testimonialsTitle: "Opinie",
+        t1: '"Ten projekt przywraca wiarę w krypto." — Poszukiwacz Krypto',
+        t2: '"Zainspirowany Fibonaccim, wykonany w kodzie." — Miłośnik Matematyki',
+        t3: '"Aureus to symbol wartości i wizji." — Analityk Rynku',
+        t4: '"Złoto ery cyfrowej." — Anonimowy Użytkownik'
+      }
+    };
+
+    function switchLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) el.innerHTML = langData[lang][key];
+      }
+    }
+
     const burnCounter = document.getElementById("burnCounter");
     let supply = 1000000;
     setInterval(() => {
