@@ -4,127 +4,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AUREUS | Digital Gold</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 0;
       background-color: #000;
       color: #FFD700;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Barlow Condensed', sans-serif;
     }
     header {
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 60px 20px 20px;
     }
     header img {
-      width: 120px;
-      height: auto;
-      margin-bottom: 20px;
+      width: 100px;
     }
     header h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
+      margin: 20px 0 10px;
     }
-    header p {
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      background: #111;
       font-size: 1.2rem;
-      font-style: italic;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FFD700;
+      transition: 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
     }
     .latin-bg {
       position: absolute;
-      top: 20%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 4rem;
-      color: rgba(255, 255, 255, 0.03);
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.05);
       white-space: nowrap;
-      pointer-events: none;
       z-index: 0;
     }
-    main {
+    section {
       position: relative;
       z-index: 1;
-      padding: 30px 20px;
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
     }
-    .section {
-      margin: 40px auto;
-      max-width: 800px;
-    }
-    .section h2 {
+    h2 {
       font-size: 2rem;
       margin-bottom: 15px;
       color: #fff;
     }
-    .section p {
-      font-size: 1.1rem;
+    p {
+      font-size: 1.2rem;
       color: #ccc;
     }
     .burn-counter {
       font-size: 1.8rem;
-      margin-top: 10px;
       color: #FFD700;
+      margin-top: 15px;
     }
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px;
       font-size: 0.9rem;
-      color: #666;
+      background: #111;
+      color: #999;
     }
   </style>
 </head>
 <body>
   <div class="latin-bg">Veritas • Sapientia • Aeternitas</div>
-
   <header>
-    <img src="https://raw.githubusercontent.com/TwojaNazwaGithub/Aureus/main/logo.png" alt="Aureus Logo" />
+    <img src="https://raw.githubusercontent.com/TwojaNazwaGithub/Aureus/main/logo.png" alt="Aureus Logo">
     <h1>AUREUS</h1>
-    <p>Digital Gold for a New Era • Guided by Fibonacci</p>
+    <p>Digital Gold for a New Era</p>
   </header>
-
-  <main>
-    <div class="section">
-      <h2>Vision</h2>
-      <p>Aureus is more than just a cryptocurrency — it’s a symbol of order, scarcity, and timeless value.</p>
-    </div>
-
-    <div class="section">
-      <h2>Tokenomics</h2>
-      <p>Total Supply: 1,000,000 AUR<br>Burn Mechanism: 1% per transaction<br>Final Supply: 100,000 AUR</p>
-    </div>
-
-    <div class="section">
-      <h2>Burn Counter</h2>
-      <div class="burn-counter" id="burnCounter">Current Supply: 1,000,000 AUR</div>
-    </div>
-
-    <div class="section">
-      <h2>Whitepaper</h2>
-      <p>Coming soon — a transparent and powerful manifesto explaining the purpose and structure of AUREUS.</p>
-    </div>
-
-    <div class="section">
-      <h2>Testimonials</h2>
-      <p>"Finally a digital asset that understands scarcity." – CryptoVisionary<br>
-         "Inspired by Fibonacci, backed by code." – Blockchain Sage<br>
-         "I believe AUREUS has long-term legacy potential." – FutureBuilder<br>
-         "Digital gold, indeed. Beautiful in principle and purpose." – TechSeeker</p>
-    </div>
-  </main>
-
+  <nav>
+    <a href="#vision">Vision</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#burn">Burn Counter</a>
+    <a href="#whitepaper">Whitepaper</a>
+    <a href="#testimonials">Testimonials</a>
+  </nav>
+  <section id="vision">
+    <h2>Vision</h2>
+    <p>AUREUS is a decentralized digital asset built to preserve value through scarcity and mathematical harmony.</p>
+  </section>
+  <section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <p>Total Supply: 1,000,000 AUR<br>Burn per transaction: 1%<br>Final Supply Target: 100,000 AUR</p>
+  </section>
+  <section id="burn">
+    <h2>Burn Counter</h2>
+    <div class="burn-counter" id="burnCounter">Current Supply: 1,000,000 AUR</div>
+  </section>
+  <section id="whitepaper">
+    <h2>Whitepaper</h2>
+    <p>The whitepaper will present the full philosophical and technical foundations of AUREUS.</p>
+  </section>
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <p>"This project restores faith in crypto." — Crypto Seeker</p>
+    <p>"Inspired by Fibonacci, executed by code." — Math Lover</p>
+    <p>"Aureus is a symbol of value and vision." — Market Analyst</p>
+    <p>"Gold for the digital age." — Anonymous User</p>
+  </section>
   <footer>
-    &copy; 2025 AUREUS Project • All rights reserved.
+    &copy; 2025 AUREUS Project. All rights reserved.
   </footer>
 
   <script>
-    // Dynamic burn counter
     const burnCounter = document.getElementById("burnCounter");
-    let total = 1000000;
-    let burned = 0;
+    let supply = 1000000;
     setInterval(() => {
-      if (total > 100000) {
-        burned += total * 0.01;
-        total -= total * 0.01;
-        burnCounter.textContent = `Current Supply: ${Math.round(total)} AUR`;
+      if (supply > 100000) {
+        supply -= supply * 0.01;
+        burnCounter.textContent = `Current Supply: ${Math.round(supply)} AUR`;
       }
     }, 4000);
   </script>
