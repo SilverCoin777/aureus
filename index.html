@@ -1,96 +1,73 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
+html_code = """
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUREUS – Zakodowana wolność</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0e0e0e;
+            color: #f4f4f4;
+        }
+        header {
+            background-color: #111;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 20px;
+            color: #d4af37;
+        }
+        .section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            color: #d4af37;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d4af37;
+            color: #000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #bfa134;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AUREUS</h1>
+        <p>Zakodowana wolność</p>
+    </header>
 
-export default function AureusPage() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white p-6">
-      <header className="text-center py-10">
-        <h1 className="text-5xl font-bold tracking-wide text-yellow-400">AUREUS</h1>
-        <p className="mt-2 italic text-zinc-300">"Fiat Lux. Fiat Veritas. Fiat AUREUS."</p>
-      </header>
+    <section class="section">
+        <h2>Manifest</h2>
+        <p>„W chwili narodzin AUREUSA narodziła się wolność.”<br>
+        Nie była dana. Nie została znaleziona. Została zakodowana.<br><br>
+        AUREUS to symbol przebudzenia. Każda decyzja z nim podjęta zostawia ślad — w blockchainie i w świadomości.</p>
+        <a href="Manifest_AUREUS_1.0_POLSKIE_ZNAKI.pdf" class="button" download>Pobierz Manifest</a>
+    </section>
 
-      <section className="flex flex-col items-center gap-6">
-        <img src="/aureus-logo.png" alt="AUREUS Logo" className="w-40 h-40" />
-        <p className="max-w-2xl text-center text-lg text-zinc-300">
-          AUREUS ($AUR) to nowa era cyfrowego złota. Zbudowany na Ethereum, deflacyjny,
-          zdecentralizowany i zaprojektowany z myślą o przebudzeniu świadomości.
-        </p>
-        <p className="text-sm text-zinc-400">
-          Smart contract: 0xF076C62684a994a9f9Aa0DE5CbEC2FE8dEbA8f78
-        </p>
-      </section>
-
-      <section className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="bg-zinc-800 border-zinc-700">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold text-yellow-300 mb-2">Złoty ciąg Fibonacciego</h2>
-            <p className="text-zinc-300">
-              Symbolika ciągu Fibonacciego reprezentuje harmonię, wzrost i porządek wszechświata. W AUREUS jest on obecny jako
-              tło ideologiczne i wizualne projektu.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-zinc-800 border-zinc-700">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold text-yellow-300 mb-2">Czarna kostka</h2>
-            <p className="text-zinc-300">
-              Reprezentuje tajemnicę, siłę i przemianę. Kostka jest widoczna w logo i w DNA projektu jako znak nowej ery decentralizacji.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
-
-      <section className="mt-12 text-center">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-4">Licznik spalonych tokenów</h2>
-        <p className="text-lg text-zinc-200">Spalonych $AUR: <span className="text-yellow-300">12,345,678</span></p>
-      </section>
-
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-6 text-center">Partners</h2>
-        <div className="flex flex-wrap justify-center gap-6 text-zinc-300">
-          <span>CryptoVision</span>
-          <span>MetaUnion</span>
-          <span>DeFi Nexus</span>
-          <span>Orbis Labs</span>
-        </div>
-      </section>
-
-      <section className="mt-16 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-4 text-center">Whitepaper</h2>
-        <p className="text-zinc-300 text-center mb-4">
-          Pobierz pełny dokument: <a href="/whitepaper.pdf" className="text-yellow-300 underline">AUREUS Whitepaper (PDF)</a>
-        </p>
-      </section>
-
-      <section className="mt-16 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-4 text-center">FAQ</h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-semibold text-lg text-yellow-300">Co to jest AUREUS?</h3>
-            <p className="text-zinc-300">To zdecentralizowana kryptowaluta oparta na Ethereum z deflacyjnym mechanizmem spalania.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg text-yellow-300">Jak mogę zdobyć AUREUS?</h3>
-            <p className="text-zinc-300">Będzie dostępny na wybranych DEX-ach oraz w początkowym airdropie.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-16 text-center">
-        <h3 className="text-xl font-bold text-yellow-400 mb-4">Dostępne języki</h3>
-        <div className="flex flex-wrap justify-center gap-3 text-sm text-zinc-300">
-          <span>English</span><span>Polski</span><span>Deutsch</span><span>Français</span><span>Español</span>
-          <span>Italiano</span><span>Português</span><span>Русский</span><span>Українська</span><span>العربية</span>
-          <span>हिन्दी</span><span>中文</span><span>日本語</span><span>한국어</span><span>Türkçe</span><span>עברית</span>
-        </div>
-      </section>
-
-      <footer className="mt-20 text-center text-xs text-zinc-500 italic">
-        <p>© 2025 AUREUS | Veritas in Numeris</p>
-      </footer>
-    </div>
-  );
-}
+    <section class="section">
+        <h2>Whitepaper</h2>
+        <p>AUREUS ($AUR) to deflacyjny token oparty na Ethereum. Początkowa podaż wynosi 1 000 000 AUR, z możliwością spalenia aż do 990 000 AUR, co oznacza minimalną możliwą podaż 10 000 AUR. Brak mintowania. Brak inflacji.</p>
+        <a href="Whitepaper_AUREUS_v0.1_FINAL.pdf" class="button" download>Pobierz Whitepaper</a>
+    </section>
+</body>
+</html>
+"""
