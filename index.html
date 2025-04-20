@@ -8265,5 +8265,55 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const downloadLink = document.querySelector('a[href$="aureus_whitepaper_final.pdf"]');
+  const langLabel = document.getElementById("currentLangLabel");
+
+  const pdfMap = {
+    en: "whitepaper_en.pdf",
+    de: "whitepaper_de.pdf",
+    es: "whitepaper_es.pdf",
+    fr: "whitepaper_fr.pdf",
+    cz: "whitepaper_cz.pdf",
+    bn: "whitepaper_bn.pdf",
+    id: "whitepaper_id.pdf",
+    ar: "whitepaper_ar.pdf",
+    hi: "whitepaper_hi.pdf",
+    it: "whitepaper_it.pdf",
+    ja: "whitepaper_ja.pdf",
+    mr: "whitepaper_mr.pdf",
+    nl: "whitepaper_nl.pdf",
+    pl: "whitepaper_pl.pdf",
+    pt: "whitepaper_pt.pdf",
+    ro: "whitepaper_ro.pdf",
+    sw: "whitepaper_sw.pdf",
+    te: "whitepaper_te.pdf",
+    th: "whitepaper_th.pdf",
+    tr: "whitepaper_tr.pdf",
+    uk: "whitepaper_uk.pdf",
+    ur: "whitepaper_ur.pdf",
+    vi: "whitepaper_vi.pdf",
+    zh: "whitepaper_zh.pdf",
+    ru: "whitepaper_ru.pdf"
+  };
+
+  function updateWhitepaperLink() {
+    const lang = langLabel?.innerText?.trim().toLowerCase();
+    if (pdfMap[lang]) {
+      downloadLink.href = "./whitepapers_by_lang/" + pdfMap[lang];
+    }
+  }
+
+  updateWhitepaperLink();
+
+  const observer = new MutationObserver(updateWhitepaperLink);
+  if (langLabel) {
+    observer.observe(langLabel, { childList: true });
+  }
+});
+</script>
+
 </body>
 </html>
